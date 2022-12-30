@@ -3,7 +3,7 @@
 
 Grounded Situation Recognition (GSR) aims to generate structured semantic summaries of images for "human-like" event understanding. Specifically, GSR task not only detects the salient activity verb (e.g. buying), but also predicts all corresponding semantic roles (e.g. agent and goods). 
 
-<img width="800" alt="image" class="center" src="https://user-images.githubusercontent.com/65300431/210104157-aef7142d-3f67-4045-b692-1f692ef9f24d.png">
+<img width="600" alt="image" class="center" src="https://user-images.githubusercontent.com/65300431/210104157-aef7142d-3f67-4045-b692-1f692ef9f24d.png">
 
 Inspired by object detection and image captioning tasks, existing methods typically employ a two-stage framework: 1) detect the activity verb, and then 2) predict semantic roles based on the detected verb. Obviously, this illogical framework constitutes a huge obstacle to semantic understanding. First, pre-detecting verbs solely without semantic roles inevitably fails to distinguish many similar daily activities (e.g., offering and giving, buying and selling). Second, predicting semantic roles in a closed auto-regressive manner can hardly exploit the semantic relations among the verb and roles. 
 
