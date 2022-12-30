@@ -1,8 +1,8 @@
 # [ACM-MM'22] GSRFormer: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
-[Paper](https://arxiv.org/abs/2208.08965) | [Model Checkpoint](https://drive.google.com/u/0/uc?id=1snS2aYo3R-rblQc0Ba7-YZ4mRdhq-6py&export=download | width=50) 
+[Paper](https://arxiv.org/abs/2208.08965) | [Model Checkpoint](https://drive.google.com/u/0/uc?id=1snS2aYo3R-rblQc0Ba7-YZ4mRdhq-6py&export=download) 
 
 Grounded Situation Recognition (GSR) aims to generate structured semantic summaries of images for "human-like" event understanding. Specifically, GSR task not only detects the salient activity verb (e.g. buying), but also predicts all corresponding semantic roles (e.g. agent and goods). 
-![prediction_results](https://user-images.githubusercontent.com/65300431/210102881-d5a49e5b-4b44-4fc1-9c39-12a9ac27ac93.png)
+![prediction_results](https://user-images.githubusercontent.com/65300431/210102881-d5a49e5b-4b44-4fc1-9c39-12a9ac27ac93.png | width=50)
 
 Inspired by object detection and image captioning tasks, existing methods typically employ a two-stage framework: 1) detect the activity verb, and then 2) predict semantic roles based on the detected verb. Obviously, this illogical framework constitutes a huge obstacle to semantic understanding. First, pre-detecting verbs solely without semantic roles inevitably fails to distinguish many similar daily activities (e.g., offering and giving, buying and selling). Second, predicting semantic roles in a closed auto-regressive manner can hardly exploit the semantic relations among the verb and roles. 
 
