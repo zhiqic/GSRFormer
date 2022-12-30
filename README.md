@@ -2,7 +2,7 @@
 [Paper](https://arxiv.org/abs/2208.08965) | [Model Checkpoint](https://drive.google.com/u/0/uc?id=1snS2aYo3R-rblQc0Ba7-YZ4mRdhq-6py&export=download) 
 
 ## Overview
-Grounded situation recognition is the task of predicting the main activity, entities playing certain roles within the activity, and bounding-box groundings of the entities in the given image. To effectively deal with this challenging task, we introduce a novel approach where the two processes for activity classification and entity estimation are interactive and complementary. To implement this idea, we propose **Co**llaborative Glance-Gaze Trans**Former** (CoFormer) that consists of two modules: Glance transformer for activity classification and Gaze transformer for entity estimation. Glance transformer predicts the main activity with the help of Gaze transformer that analyzes entities and their relations, while Gaze transformer estimates the grounded entities by focusing only on the entities relevant to the activity predicted by Glance transformer. Our CoFormer achieves the state of the art in all evaluation metrics on the SWiG dataset.
+Grounded Situation Recognition (GSR) aims to generate structured semantic summaries of images for "human-like" event understanding. Specifically, GSR task not only detects the salient activity verb (e.g. buying), but also predicts all corresponding semantic roles (e.g. agent and goods). Inspired by object detection and image captioning tasks, existing methods typically employ a two-stage framework: 1) detect the activity verb, and then 2) predict semantic roles based on the detected verb. Obviously, this illogical framework constitutes a huge obstacle to semantic understanding. First, pre-detecting verbs solely without semantic roles inevitably fails to distinguish many similar daily activities (e.g., offering and giving, buying and selling). Second, predicting semantic roles in a closed auto-regressive manner can hardly exploit the semantic relations among the verb and roles. To this end, in this paper we propose a novel two-stage framework that focuses on utilizing such bidirectional relations within verbs and roles. In the first stage, instead of pre-detecting the verb, we postpone the detection step and assume a pseudo label, where an intermediate representation for each corresponding semantic role is learned from images. In the second stage, we exploit transformer layers to unearth the potential semantic relations within both verbs and semantic roles. With the help of a set of support images, an alternate learning scheme is designed to simultaneously optimize the results: update the verb using nouns corresponding to the image, and update nouns using verbs from support images. Extensive experimental results on challenging SWiG benchmarks show that our renovated framework outperforms other state-of-the-art methods under various metrics.
 
 ![overall_architecture](https://user-images.githubusercontent.com/55849968/160762199-def33a41-b333-41c8-b367-7b6c814b987c.png)
 Following conventions in the literature, we call an activity ***verb*** and an entity ***noun***. Glance transformer predicts a verb with the help of Gaze-Step1 transformer that analyzes nouns and their relations by leveraging role features, while Gaze-Step2 transformer estimates the grounded nouns for the roles associated with the predicted verb. Prediction results are obtained by feed forward networks (FFNs). 
@@ -48,12 +48,10 @@ python -m torch.distributed.launch --nproc_per_node=4 --use_env main.py \
 - Random Color Jittering, Random Gray Scaling, Random Scaling and Random Horizontal Flipping are used for augmentation.
 
 ## Evaluation
-
 ```bash
 python main.py --output_dir GSRFormer --dev
 python main.py --output_dir GSRFormer --test
 ```
-
 Model Checkpoint can be downloaded [here](https://drive.google.com/u/0/uc?id=1snS2aYo3R-rblQc0Ba7-YZ4mRdhq-6py&export=download)
 
 ## Inference
