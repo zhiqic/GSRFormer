@@ -1,14 +1,18 @@
 # [ACM-MM'22] GSRFormer: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
 [Paper](https://arxiv.org/abs/2208.08965) | [Model Checkpoint](https://drive.google.com/u/0/uc?id=1snS2aYo3R-rblQc0Ba7-YZ4mRdhq-6py&export=download) 
 
+Grounded Situation Recognition (GSR) aims to generate structured semantic summaries of images for "human-like" event understanding. Specifically, GSR task not only detects the salient activity verb (e.g. buying), but also predicts all corresponding semantic roles (e.g. agent and goods). 
+![prediction_results](https://user-images.githubusercontent.com/65300431/210102881-d5a49e5b-4b44-4fc1-9c39-12a9ac27ac93.png)
+
+Inspired by object detection and image captioning tasks, existing methods typically employ a two-stage framework: 1) detect the activity verb, and then 2) predict semantic roles based on the detected verb. Obviously, this illogical framework constitutes a huge obstacle to semantic understanding. First, pre-detecting verbs solely without semantic roles inevitably fails to distinguish many similar daily activities (e.g., offering and giving, buying and selling). Second, predicting semantic roles in a closed auto-regressive manner can hardly exploit the semantic relations among the verb and roles. 
+
+![previous framework] (https://user-images.githubusercontent.com/65300431/210103219-6b697ed1-efd3-4915-9b74-20e337fc43bf.png)
+
+
 ## Overview
-Grounded Situation Recognition (GSR) aims to generate structured semantic summaries of images for "human-like" event understanding. Specifically, GSR task not only detects the salient activity verb (e.g. buying), but also predicts all corresponding semantic roles (e.g. agent and goods). Inspired by object detection and image captioning tasks, existing methods typically employ a two-stage framework: 1) detect the activity verb, and then 2) predict semantic roles based on the detected verb. Obviously, this illogical framework constitutes a huge obstacle to semantic understanding. First, pre-detecting verbs solely without semantic roles inevitably fails to distinguish many similar daily activities (e.g., offering and giving, buying and selling). Second, predicting semantic roles in a closed auto-regressive manner can hardly exploit the semantic relations among the verb and roles. 
+To this end, we propose a novel two-stage framework that focuses on utilizing such bidirectional relations within verbs and roles. In the first stage, instead of pre-detecting the verb, we postpone the detection step and assume a pseudo label, where an intermediate representation for each corresponding semantic role is learned from images. In the second stage, we exploit transformer layers to unearth the potential semantic relations within both verbs and semantic roles. With the help of a set of support images, an alternate learning scheme is designed to simultaneously optimize the results: update the verb using nouns corresponding to the image, and update nouns using verbs from support images. Extensive experimental results on challenging SWiG benchmarks show that our renovated framework outperforms other state-of-the-art methods under various metrics.
 
-
-![overall_architecture](https://user-images.githubusercontent.com/65300431/210102881-d5a49e5b-4b44-4fc1-9c39-12a9ac27ac93.png)
-
-To this end, in this paper we propose a novel two-stage framework that focuses on utilizing such bidirectional relations within verbs and roles. In the first stage, instead of pre-detecting the verb, we postpone the detection step and assume a pseudo label, where an intermediate representation for each corresponding semantic role is learned from images. In the second stage, we exploit transformer layers to unearth the potential semantic relations within both verbs and semantic roles. With the help of a set of support images, an alternate learning scheme is designed to simultaneously optimize the results: update the verb using nouns corresponding to the image, and update nouns using verbs from support images. Extensive experimental results on challenging SWiG benchmarks show that our renovated framework outperforms other state-of-the-art methods under various metrics.
-
+![overall_architecture](https://user-images.githubusercontent.com/65300431/210103352-a0aef46b-7b98-49e7-8c08-a1602e0da78e.png)
  
 
 ## Environment Setup
@@ -66,14 +70,13 @@ python inference.py --image_path inference/filename.jpg \
 ```
 
 ## Acknowledgements
-Our code is modified and adapted from these amazing repositories:
-- [End-to-End Object Detection with Transformers](https://github.com/facebookresearch/detr)          
-- [Grounded Situation Recognition](https://github.com/allenai/swig)
-- [Collaborative Transformers for Grounded Situation Recognition](https://github.com/jhcho99/CoFormer)
+This work was supported by the Air Force Research Laboratory under agreement number~FA8750-19-2-0200; the Defense Advanced Research Projects Agency~(DARPA) grants funded under the GAILA program~(award HR00111990063); the Defense Advanced Research Projects Agency~(DARPA) grants funded under the AIDA program~(FA8750-18-20018).
+
+The U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of the Air Force Research Laboratory or the U.S. Government.
+
 
 ## Citation
 Please cite our paper:
-
 ````BibTeX
 @inproceedings{cheng2022gsrformer,
   title={GSRFormer: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement},
@@ -86,3 +89,8 @@ Please cite our paper:
 
 ## License
 GSRFormer is released under the Apache 2.0 license. Please see the [LICENSE](LICENSE) file for more information.
+
+Our code is modified and adapted from these amazing repositories:
+- [End-to-End Object Detection with Transformers](https://github.com/facebookresearch/detr)          
+- [Grounded Situation Recognition](https://github.com/allenai/swig)
+- [Collaborative Transformers for Grounded Situation Recognition](https://github.com/jhcho99/CoFormer)
