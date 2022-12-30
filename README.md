@@ -2,6 +2,7 @@
 [Paper](https://arxiv.org/abs/2208.08965) | [Model Checkpoint](https://drive.google.com/u/0/uc?id=1snS2aYo3R-rblQc0Ba7-YZ4mRdhq-6py&export=download) 
 
 Grounded Situation Recognition (GSR) aims to generate structured semantic summaries of images for "human-like" event understanding. Specifically, GSR task not only detects the salient activity verb (e.g. buying), but also predicts all corresponding semantic roles (e.g. agent and goods). 
+
  <img width="551" alt="image" src="https://user-images.githubusercontent.com/65300431/210104075-3c1bd276-3493-4244-83ac-47a2edc0a18b.png">
 
 
