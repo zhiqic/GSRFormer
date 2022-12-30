@@ -1,7 +1,7 @@
 # [ACM MM'22] GSRFormer: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
 **Grounded Situation Recognition (GSR)** aims to generate structured semantic summaries of images for **"human-like" event understanding**. Specifically, GSR task not only detects **the salient activity verb (e.g. buying)**, but also predicts all corresponding **semantic roles (e.g. agent and goods)**. 
 - This is the official PyTorch implementation of [GSRFormer: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement](https://arxiv.org/abs/2208.08965). 
-- GSRformer achieves state-of-the-art accuracy in every evaluation metric on the SWiG dataset. This repository contains instructions, code and model checkpoint.
+- GSRformer achieves state-of-the-art accuracy on the SWiG dataset. This repository contains instructions, code and model checkpoint.
 
 <p align="center">
 <img width="1152" alt="image" src="https://user-images.githubusercontent.com/65300431/210104895-7f1c8121-9439-494d-b3cf-12217940564c.png">
@@ -18,9 +18,9 @@ Inspired by object detection and image captioning tasks, **existing methods typi
 <img width="1150" alt="image" src="https://user-images.githubusercontent.com/65300431/210104573-ca8eb615-5197-4a7e-81e3-fb499376132a.png">
 </p>
 
-To this end, we propose **a novel two-stage framework** that focuses on utilizing such bidirectional relations within verbs and roles. 
-- In the first stage, instead of pre-detecting the verb, we postpone the detection step and assume a pseudo label, where an intermediate representation for each corresponding semantic role is learned from images. 
-- In the second stage, we exploit transformer layers to unearth the potential semantic relations within both verbs and semantic roles. With the help of a set of support images, an alternate learning scheme is designed to simultaneously optimize the results: update the verb using nouns corresponding to the image, and update nouns using verbs from support images. 
+To this end, we propose **a novel two-stage framework that focuses on utilizing such bidirectional relations within verbs and roles**. 
+- In the first stage, instead of pre-detecting the verb, we **postpone the detection step and assume a pseudo label**, where an intermediate representation for each corresponding semantic role is learned from images. 
+- In the second stage, we **exploit transformer layers to unearth the potential semantic relations within both verbs and semantic roles**. With the help of a set of support images, an alternate learning scheme is designed to simultaneously optimize the results: update the verb using nouns corresponding to the image, and update nouns using verbs from support images. 
 
 <p align="center">	
 <img width="1049" alt="image" src="https://user-images.githubusercontent.com/65300431/210105753-7db461da-fb2c-44a4-b9e1-efa1b996986e.png">
