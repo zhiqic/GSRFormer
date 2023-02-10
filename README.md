@@ -104,7 +104,7 @@ Please cite our paper:
 ````
 
 ## Acknowledgements
-This work was supported by the Air Force Research Laboratory under agreement number FA8750-19-2-0200; the Defense Advanced Research Projects Agency (DARPA) grants funded under the GAILA program (award HR00111990063); the Defense Advanced Research Projects Agency (DARPA) grants funded under the AIDA program~(FA8750-18-20018).
+This work was supported by the Air Force Research Laboratory under agreement number FA8750-19-2-0200; the Defense Advanced Research Projects Agency (DARPA) grants funded under the GAILA program (award HR00111990063); the Defense Advanced Research Projects Agency (DARPA) grants funded under the AIDA program (FA8750-18-20018).
 
 The U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of the Air Force Research Laboratory or the U.S. Government.
 
