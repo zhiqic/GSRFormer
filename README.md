@@ -1,7 +1,3 @@
-Sure! Let's streamline and enhance the README to make it more concise and user-friendly.
-
----
-
 # GSRFormer: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
 
 **Grounded Situation Recognition (GSR)** aims to generate structured semantic summaries of images, capturing "human-like" event understanding. The GSRFormer model achieves state-of-the-art accuracy on the SWiG dataset. This is its official PyTorch implementation.
