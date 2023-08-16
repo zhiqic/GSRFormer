@@ -1,30 +1,40 @@
-# GSRFormer: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
-
-**Grounded Situation Recognition (GSR)** aims to generate structured semantic summaries of images, capturing "human-like" event understanding. The GSRFormer model achieves state-of-the-art accuracy on the SWiG dataset. This is its official PyTorch implementation.
-
-![Overview Image](https://user-images.githubusercontent.com/65300431/210104895-7f1c8121-9439-494d-b3cf-12217940564c.png)
+# **GSRFormer**: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
 
 ## Introduction
-Traditional GSR methods often follow a two-step approach: 
-1. Detect the activity verb.
-2. Predict semantic roles based on the detected verb.
+Understanding visual scenes has long been at the forefront of AI research. While machines excel at detecting objects and classifying images, truly interpreting the narrative an image conveys — as humans naturally do — remains challenging. This is the realm of **Grounded Situation Recognition (GSR)**.
 
-However, these methods suffer from some shortcomings, such as not distinguishing between similar daily activities or failing to exploit semantic relationships among verbs and roles.
+**GSRFormer** pushes the boundaries in this field. It seeks to replicate human-like interpretation of visual scenarios, recognizing not just primary actions, but also the underlying entities or roles associated with these actions.
 
-GSRFormer addresses these issues with a new framework:
-1. It assumes a pseudo label and learns intermediate representations for semantic roles.
-2. Uses transformer layers to unveil semantic relations, with an alternate learning scheme to optimize the verb and nouns.
+<div align="center">
+   <img width="801" alt="image" src="https://github.com/zhiqic/GSRFormer/assets/65300431/716c7cce-7316-4424-af50-b67cd2b02382">
+</div>
 
-![Model Structure](https://user-images.githubusercontent.com/65300431/210105753-7db461da-fb2c-44a4-b9e1-efa1b996986e.png)
+
+### Why GSRFormer?
+While traditional GSR methods are robust, they sometimes overlook the subtle intricacies that distinguish similar actions and the rich semantic relationships binding them. GSRFormer fills this gap through:
+
+
+1. **Rethinking Verb Detection:** Contrary to traditional approaches that start by detecting the activity verb, our method initially assumes a pseudo label, delving into learning intermediate representations for associated semantic roles directly from images. This sidesteps the pitfalls of ambiguous verb distinctions seen in conventional methods, enhancing the depth of event understanding.
+
+2. **Leveraging Bidirectional Semantic Relations:** Through an innovative alternating learning scheme, backed by support images, verbs are optimized using image-corresponding nouns, while nouns benefit from verbs extracted from support images. This bidirectional refinement ensures a holistic comprehension of the visual narrative, far surpassing unidirectional interpretations.
+
+
+<div align="center">
+   <img width="963" alt="image" src="https://github.com/zhiqic/GSRFormer/assets/65300431/6180bccb-0c41-4c31-8ada-d95cfea65f2c">
+</div>
+
+For a more comprehensive understanding of the approach and its benefits, please take a look at the official [ACM MM 2013 Oral paper](https://dl.acm.org/doi/pdf/10.1145/3503161.3547943).
+ Make changes to the phrasing as desired.
+
 
 ## Setup & Installation
 
 ### Prerequisites
-- Conda (for environment management)
+- Conda (recommended for hassle-free environment management)
 - PyTorch
 
-### Steps
-1. Clone the repository:
+### Installation Steps
+1. Start by cloning the repository:
    ```bash
    git clone https://github.com/zhiqic/GSRFormer.git
    cd GSRFormer
@@ -35,23 +45,25 @@ GSRFormer addresses these issues with a new framework:
    conda activate GSRFormer
    conda install pytorch==1.8.0 torchvision==0.9.0 cudatoolkit=11.1 -c pytorch -c conda-forge
    ```
-3. Install required packages:
+3. Install the packages required for the project:
    ```bash
    pip install -r requirements.txt                   
    ```
 
 ## Dataset: SWiG
-- Annotations: Located in the "SWiG/SWiG_jsons/" directory.
-- Images: Download [here](https://swig-data-weights.s3.us-east-2.amazonaws.com/images_512.zip) and store in "SWiG/images_512/" directory.
+The SWiG dataset plays a pivotal role in the model's training and validation:
 
-### Structure
-- All images: "SWiG/images_512/" directory.
-- Training: `train.json`
-- Development: `dev.json`
-- Testing: `test.json`
+- Annotations: Found in "SWiG/SWiG_jsons/".
+- Images: Download them [here](https://swig-data-weights.s3.us-east-2.amazonaws.com/images_512.zip) and place them in "SWiG/images_512/".
+
+### Directory Structure
+- Images: "SWiG/images_512/"
+- Training Set: `train.json`
+- Development Set: `dev.json`
+- Testing Set: `test.json`
 
 ## Training
-Train GSRFormer with the following command:
+Kickstart the training with:
 ```bash
 python -m torch.distributed.launch --nproc_per_node=4 --use_env main.py \
            --backbone resnet50 --dataset_file swig \
@@ -62,21 +74,21 @@ python -m torch.distributed.launch --nproc_per_node=4 --use_env main.py \
 ```
 
 ## Evaluation
-Evaluate using these commands:
+Assess your model using:
 ```bash
 python main.py --output_dir GSRFormer --dev
 python main.py --output_dir GSRFormer --test
 ```
 
 ## Inference
-For custom image inference:
+For real-time application on custom images:
 ```bash
 python inference.py --image_path inference/filename.jpg \
                     --output_dir inference
 ```
 
-## Citation
-If using this work, please cite:
+## Acknowledgments & Citation
+Enriching the AI community is our goal. If building upon this work, please reference:
 ```
 @inproceedings{cheng2022gsrformer,
   title={GSRFormer: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement},
@@ -88,4 +100,6 @@ If using this work, please cite:
 ```
 
 ## License
-Released under the Apache 2.0 license. Refer to [LICENSE](LICENSE) for details.
+Refer to the Apache 2.0 license provided in [LICENSE](LICENSE) for usage details.
+
+Join us in our journey towards richer, more intuitive machine interpretations of the visual world. Explore GSRFormer today!
