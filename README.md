@@ -1,5 +1,5 @@
 # **GSRFormer**: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
-> **ACMMM 2022** 
+> **ACMMM 2022 (Oral)** 
 ## Introduction
 Understanding visual scenes has long been at the forefront of AI research. While machines excel at detecting objects and classifying images, truly interpreting the narrative an image conveys — as humans naturally do — remains challenging. This is the realm of **Grounded Situation Recognition (GSR)**.
 
@@ -23,8 +23,8 @@ While traditional GSR methods are robust, they sometimes overlook the subtle int
    <img width="963" alt="image" src="https://github.com/zhiqic/GSRFormer/assets/65300431/6180bccb-0c41-4c31-8ada-d95cfea65f2c">
 </div>
 
-For a more comprehensive understanding of the approach and its benefits, please take a look at the official [ACM MM 2022 Oral paper](https://dl.acm.org/doi/pdf/10.1145/3503161.3547943).
- Make changes to the phrasing as desired.
+
+For a more comprehensive understanding of the approach and its benefits, please take a look at our [ACM MM 2022 Oral paper](https://arxiv.org/abs/2208.08965).
 
 
 ## Setup & Installation
@@ -86,8 +86,12 @@ For real-time application on custom images:
 python inference.py --image_path inference/filename.jpg \
                     --output_dir inference
 ```
+## Acknowledgments
 
-## Acknowledgments & Citation
+First and foremost, we would like to extend our deepest gratitude to the original authors and contributors of the [CoFormer repository](https://github.com/jhcho99/CoFormer). Our work stands on the shoulders of giants, and the foundation laid by their research and codebase was invaluable for the advancements we made. Furthermore, we want to express our sincere appreciation to Microsoft Research for their invaluable support throughout our project.
+
+
+## Citation
 Enriching the AI community is our goal. If building upon this work, please reference:
 ```
 @inproceedings{cheng2022gsrformer,
