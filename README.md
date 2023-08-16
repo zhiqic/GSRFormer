@@ -24,7 +24,7 @@ While traditional GSR methods are robust, they sometimes overlook the subtle int
 </div>
 
 
-For a more comprehensive understanding of the approach and its benefits, please take a look at our [ACM MM 2022 Oral paper](https://arxiv.org/abs/2208.08965).
+For a more comprehensive understanding of the approach and its benefits, please take a look at our [ACM Multimedia 2022 paper](https://arxiv.org/abs/2208.08965).
 
 
 ## Setup & Installation
