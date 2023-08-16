@@ -23,7 +23,7 @@ While traditional GSR methods are robust, they sometimes overlook the subtle int
    <img width="963" alt="image" src="https://github.com/zhiqic/GSRFormer/assets/65300431/6180bccb-0c41-4c31-8ada-d95cfea65f2c">
 </div>
 
-For a more comprehensive understanding of the approach and its benefits, please take a look at the official [ACM MM 2013 Oral paper](https://dl.acm.org/doi/pdf/10.1145/3503161.3547943).
+For a more comprehensive understanding of the approach and its benefits, please take a look at the official [ACM MM 2022 Oral paper](https://dl.acm.org/doi/pdf/10.1145/3503161.3547943).
  Make changes to the phrasing as desired.
 
 
