@@ -1,5 +1,5 @@
 # **GSRFormer**: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
-
+> **ACMMM 2022** 
 ## Introduction
 Understanding visual scenes has long been at the forefront of AI research. While machines excel at detecting objects and classifying images, truly interpreting the narrative an image conveys — as humans naturally do — remains challenging. This is the realm of **Grounded Situation Recognition (GSR)**.
 
