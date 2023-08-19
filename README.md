@@ -1,6 +1,5 @@
 # **GSRFormer**: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
 
-## Introduction
 Understanding visual scenes has long been at the forefront of AI research. While machines excel at detecting objects and classifying images, truly interpreting the narrative an image conveys — as humans naturally do — remains challenging. This is the realm of **Grounded Situation Recognition (GSR)**.
 
 **GSRFormer** pushes the boundaries in this field. It seeks to replicate human-like interpretation of visual scenarios, recognizing not just primary actions, but also the underlying entities or roles associated with these actions.
@@ -30,7 +29,7 @@ For a more comprehensive understanding of the approach and its benefits, please 
 ## Setup & Installation
 
 ### Prerequisites
-- Conda (recommended for hassle-free environment management)
+- Conda
 - PyTorch
 
 ### Installation Steps
