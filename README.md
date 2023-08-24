@@ -103,6 +103,4 @@ Enriching the AI community is our goal. If building upon this work, please refer
 ```
 
 ## License
-Refer to the Apache 2.0 license provided in [LICENSE](LICENSE) for usage details.
-
-Join us in our journey towards richer, more intuitive machine interpretations of the visual world. Explore GSRFormer today!
+Refer to the Apache 2.0 license provided in [LICENSE](LICENSE) for usage details. Join us in our journey towards richer, more intuitive machine interpretations of the visual world. Explore GSRFormer today!
