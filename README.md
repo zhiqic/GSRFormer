@@ -87,7 +87,7 @@ python inference.py --image_path inference/filename.jpg \
 ```
 ## Acknowledgments
 
-First and foremost, we would like to extend our deepest gratitude to the original authors and contributors of the [CoFormer repository](https://github.com/jhcho99/CoFormer). Our work stands on the shoulders of giants, and the foundation laid by their research and codebase was invaluable for the advancements we made. Furthermore, we want to express our sincere appreciation to Microsoft Research for their invaluable support throughout our project.
+First and foremost, we would like to extend our gratitude to the authors and contributors of the [CoFormer repository](https://github.com/jhcho99/CoFormer). Our work stands on the shoulders of giants, and the foundation laid by their research and codebase was invaluable for the advancements we made. Furthermore, we want to express our sincere appreciation to Microsoft Research for its invaluable support throughout our project.
 
 
 ## Citation
