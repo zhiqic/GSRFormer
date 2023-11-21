@@ -1,29 +1,26 @@
-# **GSRFormer**: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
+# GSRFormer: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
 
-Understanding visual scenes has long been at the forefront of AI research. While machines excel at detecting objects and classifying images, truly interpreting the narrative an image conveys — as humans naturally do — remains challenging. This is the realm of **Grounded Situation Recognition (GSR)**.
+GSRFormer is a novel approach for grounded situation recognition (GSR) that aims to mimic human-like understanding of visual scenes. While machines can detect objects and classify images well, interpreting the narrative and semantics conveyed in an image remains challenging. 
 
-**GSRFormer** pushes the boundaries in this field. It seeks to replicate human-like interpretation of visual scenarios, recognizing not just primary actions, but also the underlying entities or roles associated with these actions.
+GSRFormer seeks to advance GSR by modeling not just primary actions, but the associated entities and roles that form a cohesive visual situation.
+
 
 <div align="center">
    <img width="801" alt="image" src="https://github.com/zhiqic/GSRFormer/assets/65300431/716c7cce-7316-4424-af50-b67cd2b02382">
 </div>
 
 
-### Why GSRFormer?
-While traditional GSR methods are robust, they sometimes overlook the subtle intricacies that distinguish similar actions and the rich semantic relationships binding them. GSRFormer fills this gap through:
+## Key Features
 
+- **Alternating Learning Scheme:** Uses an innovative bidirectional learning process between verbs and nouns to ensure a holistic semantic understanding beyond unidirectional interpretations.
 
-1. **Rethinking Verb Detection:** Contrary to traditional approaches that start by detecting the activity verb, our method initially assumes a pseudo label, delving into learning intermediate representations for associated semantic roles directly from images. This sidesteps the pitfalls of ambiguous verb distinctions seen in conventional methods, enhancing the depth of event understanding.
+- **Pseudo Labeling:** Initially assumes pseudo labels for semantic roles to focus directly on learning intermediate representations from images, avoiding verb ambiguity issues in conventional GSR. 
 
-2. **Leveraging Bidirectional Semantic Relations:** Through an innovative alternating learning scheme, backed by support images, verbs are optimized using image-corresponding nouns, while nouns benefit from verbs extracted from support images. This bidirectional refinement ensures a holistic comprehension of the visual narrative, far surpassing unidirectional interpretations.
+- **Support Images:** Leverages supplementary images during training to refine verbs using corresponding nouns and vice versa, enhancing generalization.
 
+For more details, please refer to our [ACM Multimedia 2022 paper](https://arxiv.org/abs/2208.08965).
 
-<div align="center">
-   <img width="963" alt="image" src="https://github.com/zhiqic/GSRFormer/assets/65300431/6180bccb-0c41-4c31-8ada-d95cfea65f2c">
-</div>
-
-
-For a more comprehensive understanding of the approach and its benefits, please take a look at our [ACM Multimedia 2022 paper](https://arxiv.org/abs/2208.08965).
+GSRFormer achieves state-of-the-art performance on two benchmark GSR datasets, advancing scene understanding and narrative interpretation capabilities.
 
 
 ## Setup & Installation
@@ -87,7 +84,7 @@ python inference.py --image_path inference/filename.jpg \
 ```
 ## Acknowledgments
 
-First and foremost, we would like to extend our gratitude to the authors and contributors of the [CoFormer repository](https://github.com/jhcho99/CoFormer). Our work stands on the shoulders of giants, and the foundation laid by their research and codebase was invaluable for the advancements we made. Furthermore, we want to express our sincere appreciation to Microsoft Research for its invaluable support throughout our project.
+Thank you to the authors of [CoFormer repository](https://github.com/jhcho99/CoFormer) for providing an excellent codebase that enabled our advancements. We sincerely appreciate the support of Microsoft Research throughout this project.
 
 
 ## Citation
@@ -103,4 +100,4 @@ Enriching the AI community is our goal. If building upon this work, please refer
 ```
 
 ## License
-Refer to the Apache 2.0 license provided in [LICENSE](LICENSE) for usage details. Join us in our journey towards richer, more intuitive machine interpretations of the visual world. Explore GSRFormer today!
+Refer to the Apache 2.0 license provided in [LICENSE](LICENSE) for usage details.
