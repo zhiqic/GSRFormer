@@ -1,6 +1,6 @@
 # GSRFormer: Grounded Situation Recognition Transformer with Alternate Semantic Attention Refinement
 
-GSRFormer is a approach for grounded situation recognition (GSR) that aims to mimic human-like understanding of visual scenes. While machines can detect objects and classify images well, interpreting the narrative and semantics conveyed in an image remains challenging. 
+GSRFormer is an approach for grounded situation recognition (GSR) that aims to mimic human-like understanding of visual scenes. While machines can detect objects and classify images well, interpreting the narrative and semantics conveyed in an image remains challenging. 
 
 GSRFormer seeks to advance GSR by modeling not just primary actions, but the associated entities and roles that form a cohesive visual situation.
 
